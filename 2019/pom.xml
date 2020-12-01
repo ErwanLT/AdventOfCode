@@ -23,6 +23,7 @@
     </build>
     <modules>
         <module>2019-jour1</module>
+        <module>2019-jour2</module>
     </modules>
 
 
