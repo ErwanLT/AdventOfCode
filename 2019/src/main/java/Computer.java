@@ -6,33 +6,43 @@ import java.util.Scanner;
 public class Computer {
 
     private long[] parts = new long[10000];
-    private int position = 0;
     private int relBase = 0;
-    private final boolean pauseOnInput = false;
-    private final boolean pauseOnOutput = false;
-    private int inputNumber = 0;
     private List<Long> outputs = new ArrayList<>();
-    private long output;
+    private boolean running = true;
+    private boolean pauseOnInput;
+    private boolean pauseOnOutput;
+    private int inputNumber = 0;
+    private int position = 0;
+    private long output = 0;
 
     public Computer(String input) {
+        this(input, false);
+    }
+
+    public Computer(String input, boolean pauseOnInput) {
+        this(input, pauseOnInput, false);
+    }
+
+    public Computer(String input, boolean pauseOnInput, boolean pauseOnOutput) {
+        this(input, pauseOnInput, pauseOnOutput, false);
+    }
+
+    public Computer(String input, boolean pauseOnInput, boolean pauseOnOutput, boolean debug) {
         String[] temp = input.split(",");
         Arrays.fill(parts, 0);
         for (int i = 0; i < temp.length; i++) {
             parts[i] = Long.parseLong(temp[i]);
         }
-    }
-
-    public long[] getParts() {
-        return parts;
+        this.pauseOnInput = pauseOnInput;
+        this.pauseOnOutput = pauseOnOutput;
     }
 
     public void compute() {
         String opcode = parts[position] + "";
-        while (!opcode.equalsIgnoreCase("99")){
+        while (!opcode.equalsIgnoreCase("99")) {
             int mode1 = parseNumber(opcode, opcode.length() - 3);
             int mode2 = parseNumber(opcode, opcode.length() - 4);
             int mode3 = parseNumber(opcode, opcode.length() - 5);
-
             switch (opcode.toCharArray()[opcode.length() - 1]) {
                 case '1': {
                     long numb1 = getValue(mode1, position + 1);
@@ -40,7 +50,6 @@ public class Computer {
                     int output = getAddress(mode3, position + 3);
                     parts[output] = numb2 + numb1;
                     position += 4;
-                        System.out.printf("Addition : %d + %d = %d\n", numb1, numb2, numb1 + numb2);
                     break;
                 }
                 case '2': {
@@ -49,13 +58,10 @@ public class Computer {
                     int output = getAddress(mode3, position + 3);
                     parts[output] = numb2 * numb1;
                     position += 4;
-                    System.out.printf("Multiplication : %d * %d = %d \n", numb1, numb2, numb1 * numb2);
                     break;
                 }
                 case '3': {
-                    if (pauseOnInput && inputNumber == -100) {
-                        return;
-                    }
+                    if (pauseOnInput && inputNumber == -100) return;
                     int output = getAddress(mode1, position + 1);
                     if (!pauseOnInput) {
                         System.out.println("Enter a number: ");
@@ -67,13 +73,11 @@ public class Computer {
                         inputNumber = -100;
                     }
                     position += 2;
-                    System.out.printf("Input [%d]: Changed %d to %d \n", mode1, output, parts[output]);
                     break;
                 }
                 case '4': {
                     long output = getValue(mode1, position + 1);
                     outputs.add(output);
-                    System.out.printf("Output [%d]: %d \n", mode1, output);
                     position += 2;
                     this.output = output;
                     if (pauseOnOutput) {
@@ -125,9 +129,26 @@ public class Computer {
                     position += 4;
                     break;
                 }
+                case '9': {
+                    long numb = getValue(mode1, position + 1);
+                    relBase += numb;
+                    position += 2;
+                }
             }
             opcode = parts[position] + "";
         }
+        running = false;
+    }
+
+    private long getValue(int mode, int position) {
+        if (mode == 0) return parts[Integer.parseInt(parts[position] + "")];
+        else if (mode == 1) return parts[position];
+        else return parts[Integer.parseInt(parts[position] + relBase + "")];
+    }
+
+    private int getAddress(int mode, int position) {
+        if (mode == 0) return (int) parts[position];
+        else return (int) parts[position] + relBase;
     }
 
     private int parseNumber(String number, int position) {
@@ -137,21 +158,23 @@ public class Computer {
         return Integer.parseInt((number.charAt(position) + ""));
     }
 
-    private long getValue(int mode, int position) {
-        if (mode == 0) {
-            return parts[Integer.parseInt(parts[position] + "")];
-        } else if (mode == 1) {
-            return parts[position];
-        } else {
-            return parts[Integer.parseInt(parts[position] + relBase + "")];
-        }
+    public long[] getParts() {
+        return parts;
     }
 
-    private int getAddress(int mode, int position) {
-        if (mode == 0) {
-            return (int) parts[position];
-        } else {
-            return (int) parts[position] + relBase;
-        }
+    public List<Long> getOutputs() {
+        return outputs;
+    }
+
+    public void setInputNumber(int inputNumber) {
+        this.inputNumber = inputNumber;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public long getOutput() {
+        return output;
     }
 }
