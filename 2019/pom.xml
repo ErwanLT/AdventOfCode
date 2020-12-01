@@ -6,6 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>2019</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <build>
@@ -20,6 +21,9 @@
             </plugin>
         </plugins>
     </build>
+    <modules>
+        <module>2019-jour1</module>
+    </modules>
 
 
 </project>
