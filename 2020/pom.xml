@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>jour1</module>
+        <module>2020-jour1</module>
+        <module>2020-jour2</module>
     </modules>
 
     <build>
