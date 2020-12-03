@@ -8,6 +8,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * For Part 2 I changed the x and y parameter in the for loop of the findEncounteredTree method to match the slop provided.
+ */
 public class Jour3A {
 
     private static Set<Position> treePosition = new HashSet<>();
@@ -60,6 +63,7 @@ public class Jour3A {
     }
 
     private static void populateTreePosition(List<String> lines) {
+        System.out.println("------ Populate Tree Position: Start ------");
         for (int y = 0; y < maxY; y++) {
             for (int x = 0; x < maxX; x++) {
                 String line = lines.get(y);
@@ -68,14 +72,15 @@ public class Jour3A {
                 }
             }
         }
+        System.out.println("------ Populate Tree Position: End ------");
     }
 
     private static void findEncounteredTree(List<String> lines) {
         System.out.println("------ Counting Encoutered Tree : Start ------");
 
-        int index = 3;
+        int index = 1;
 
-        for (int y = 1; y < maxY; y++) {
+        for (int y = 2; y < maxY; y +=2) {
             String line = lines.get(y);
 
             if(line.charAt(index) == '#'){
@@ -84,7 +89,7 @@ public class Jour3A {
                 treeEncouter++;
                 System.out.println(treeEncouter);
             }
-            index = index+3;
+            index++;
         }
         System.out.println("------ Counting Encoutered Tree : End ------");
     }
