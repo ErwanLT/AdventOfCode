@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.regex.Pattern;
+
 public class Jour4Test {
 
     @Test
@@ -100,38 +102,22 @@ public class Jour4Test {
     }
 
     private boolean validateHeight(String s){
-        if(s.contains("cm")){
-            int h = Integer.valueOf(s.split("cm")[0]);
-            return h >= 150 && h <= 193;
-        } else if(s.contains("in")){
-            int h = Integer.valueOf(s.split("in")[0]);
-            return h >= 59 && h <= 76;
-        } else {
-            return false;
-        }
+        final Pattern pattern = Pattern.compile("^((1([5-8][0-9]|9[0-3])cm)|((59|6[0-9]|7[0-6])in))$");
+        return pattern.matcher(s).matches();
     }
 
     private boolean validateBirthYear(String s){
-        if (s.length() != 4){
-            return false;
-        }
-        int birth = Integer.valueOf(s);
-        return birth >= 1920 && birth <= 2002;
+        final Pattern pattern = Pattern.compile("^(200[0-2]|19[2-9][0-9])$");
+        return pattern.matcher(s).matches();
     }
 
-    private static boolean validateIssueYear(String issueYear){
-        if (issueYear.length() != 4){
-            return false;
-        }
-        int birth = Integer.valueOf(issueYear);
-        return birth >= 2010 && birth <= 2020;
+    private static boolean validateIssueYear(String s){
+        final Pattern pattern = Pattern.compile("^(2020|201[0-9])$");
+        return pattern.matcher(s).matches();
     }
 
     private static boolean validateExpirationYear(String s){
-        if (s.length() != 4){
-            return false;
-        }
-        int expiration = Integer.valueOf(s);
-        return expiration >= 2020 && expiration <= 2030;
+        final Pattern pattern = Pattern.compile("^(2030|202[0-9])$");
+        return pattern.matcher(s).matches();
     }
 }
