@@ -61,7 +61,6 @@ public class Jour4Test {
         p.setEyeColor("amb");
         p.setHeight("170");
         p.setPassportID("186cm");
-
         Assert.assertFalse(validatePassport(p));
 
         p.setBirthYear("1980");
@@ -71,8 +70,16 @@ public class Jour4Test {
         p.setEyeColor("grn");
         p.setHeight("74in");
         p.setPassportID("087499704");
-
         Assert.assertTrue(validatePassport(p));
+
+        p.setBirthYear("2007");
+        p.setIssueYear("2003");
+        p.setExpirationYear("2038");
+        p.setHairColor("74454a");
+        p.setEyeColor("zzz");
+        p.setHeight("59cm");
+        p.setPassportID("3556412378");
+        Assert.assertFalse(validatePassport(p));
     }
 
     private boolean validatePassport(Passport p) {
