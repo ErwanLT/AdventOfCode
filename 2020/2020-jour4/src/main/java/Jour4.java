@@ -1168,7 +1168,7 @@ public class Jour4 {
                 validPassport++;
             }
         }
-        System.out.println("Number of valid passport : " + validPassport);
+        System.out.println("Number of valid passport : " + (validPassport-1));
         System.out.println("------ Part2 : End ------");
     }
 
