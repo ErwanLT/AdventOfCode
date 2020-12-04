@@ -13,6 +13,7 @@
         <module>2020-jour2</module>
         <module>2020-jour3</module>
         <module>2020-jour4</module>
+        <module>2020-jour5</module>
     </modules>
 
     <build>
