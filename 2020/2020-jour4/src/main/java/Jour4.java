@@ -1163,69 +1163,13 @@ public class Jour4 {
         System.out.println("------ Part2 : Start ------");
         int validPassport = 0;
         for (Passport p : part1ValidPassport){
-            boolean validBirthYear = validateBirthYear(p.getBirthYear());
-            boolean validIssueYear = validateIssueYear(p.getIssueYear());
-            boolean validExpirationYear = validateExpirationYear(p.getExpirationYear());
-            boolean validHeight = valiHeight(p.getHeight());
-            boolean validHairColor = validateHairColor(p.getHairColor());
-            boolean validEyesColor = validateEyesColor(p.getEyeColor());
-            boolean validPassportID = validatePassportId(p.getPassportID());
-
-            if(validBirthYear && validIssueYear && validExpirationYear && validHeight && validHairColor && validEyesColor && validPassportID){
+            if(p.isValid()){
                 System.out.println(p);
                 validPassport++;
             }
         }
         System.out.println("Number of valid passport : " + validPassport);
         System.out.println("------ Part2 : End ------");
-    }
-
-    private static boolean validatePassportId(String passportID) {
-        return passportID.matches("^[0-9]{9}$");
-    }
-
-    private static boolean validateHairColor(String hairColor) {
-        return hairColor.matches("^(#[a-f0-9]{6}$)");
-    }
-
-    private static boolean validateEyesColor(String eyeColor) {
-        return eyeColor.matches("^((amb)|(blu)|(brn)|(gry)|(grn)|(hzl)|(oth))$");
-    }
-
-    private static boolean valiHeight(String height) {
-        if(height.contains("cm")){
-            int h = Integer.valueOf(height.split("cm")[0]);
-            return h >= 150 && h <= 193;
-        } else if(height.contains("in")){
-            int h = Integer.valueOf(height.split("in")[0]);
-            return h >= 59 && h <= 76;
-        } else {
-            return false;
-        }
-    }
-
-    private static boolean validateExpirationYear(String expirationYear){
-        if (expirationYear.length() != 4){
-            return false;
-        }
-        int expiration = Integer.valueOf(expirationYear);
-        return expiration >= 2020 && expiration <= 2030;
-    }
-
-    private static boolean validateIssueYear(String issueYear){
-        if (issueYear.length() != 4){
-            return false;
-        }
-        int issue = Integer.valueOf(issueYear);
-        return issue >= 2010 && issue <= 2020;
-    }
-
-    private static boolean validateBirthYear(String birthYear){
-        if (birthYear.length() != 4){
-            return false;
-        }
-        int birth = Integer.valueOf(birthYear);
-        return birth >= 1920 && birth <= 2002;
     }
 
     private static void solvePart1() {

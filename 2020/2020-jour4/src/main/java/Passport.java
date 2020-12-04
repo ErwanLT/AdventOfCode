@@ -22,4 +22,56 @@ public class Passport {
     private String passportID;
 
     private String countryID;
+
+    public boolean isValid(){
+        return validateBirthYear() && validateIssueYear() && validateExpirationYear() && valiHeight() && validateHairColor() && validateEyesColor() && validatePassportId();
+    }
+
+    private boolean validatePassportId() {
+        return this.passportID.matches("^[0-9]{9}$");
+    }
+
+    private boolean validateHairColor() {
+        return this.hairColor.matches("^(#[a-f0-9]{6}$)");
+    }
+
+    private boolean validateEyesColor() {
+        return this.eyeColor.matches("^((amb)|(blu)|(brn)|(gry)|(grn)|(hzl)|(oth))$");
+    }
+
+    private boolean valiHeight() {
+        if(this.height.contains("cm")){
+            int h = Integer.valueOf(this.height.split("cm")[0]);
+            return h >= 150 && h <= 193;
+        } else if(this.height.contains("in")){
+            int h = Integer.valueOf(this.height.split("in")[0]);
+            return h >= 59 && h <= 76;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean validateExpirationYear(){
+        if (this.expirationYear.length() != 4){
+            return false;
+        }
+        int expiration = Integer.valueOf(this.expirationYear);
+        return expiration >= 2020 && expiration <= 2030;
+    }
+
+    private boolean validateIssueYear(){
+        if (this.issueYear.length() != 4){
+            return false;
+        }
+        int issue = Integer.valueOf(this.issueYear);
+        return issue >= 2010 && issue <= 2020;
+    }
+
+    private boolean validateBirthYear(){
+        if (this.birthYear.length() != 4){
+            return false;
+        }
+        int birth = Integer.valueOf(this.birthYear);
+        return birth >= 1920 && birth <= 2002;
+    }
 }
