@@ -45,22 +45,38 @@ public class Passport {
     }
 
     private boolean valiHeight() {
-        final Pattern pattern = Pattern.compile("^((1([5-8][0-9]|9[0-3])cm)|((59|6[0-9]|7[0-6])in))$");
-        return pattern.matcher(this.height).matches();
+        if(this.height.contains("cm")){
+            int h = Integer.valueOf(this.height.split("cm")[0]);
+            return h >= 150 && h <= 193;
+        } else if(this.height.contains("in")){
+            int h = Integer.valueOf(this.height.split("in")[0]);
+            return h >= 59 && h <= 76;
+        } else {
+            return false;
+        }
     }
 
     private boolean validateExpirationYear(){
-        final Pattern pattern = Pattern.compile("^(2030|202[0-9])$");
-        return pattern.matcher(this.expirationYear).matches();
+        if (this.expirationYear.length() != 4){
+            return false;
+        }
+        int expiration = Integer.valueOf(this.expirationYear);
+        return expiration >= 2020 && expiration <= 2030;
     }
 
     private boolean validateIssueYear(){
-        final Pattern pattern = Pattern.compile("^(2020|201[0-9])$");
-        return pattern.matcher(this.issueYear).matches();
+        if (this.issueYear.length() != 4){
+            return false;
+        }
+        int issue = Integer.valueOf(this.issueYear);
+        return issue >= 2010 && issue <= 2020;
     }
 
     private boolean validateBirthYear(){
-        final Pattern pattern = Pattern.compile("^(200[0-2]|19[2-9][0-9])$");
-        return pattern.matcher(this.birthYear).matches();
+        if (this.birthYear.length() != 4){
+            return false;
+        }
+        int birth = Integer.valueOf(this.birthYear);
+        return birth >= 1920 && birth <= 2002;
     }
 }
