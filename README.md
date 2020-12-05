@@ -18,5 +18,5 @@ One module for a year.
 * [2020](2020/README.md) Current
 
 [![Language](https://img.shields.io/badge/Language-Java-orange)](https://www.java.com/)
-[![Days completed](https://img.shields.io/badge/Days%20completed-4-blue)](2020)
-[![Stars](https://img.shields.io/badge/⭐️-8-yellow)]()
+[![Days completed](https://img.shields.io/badge/Days%20completed-5-blue)](2020)
+[![Stars](https://img.shields.io/badge/⭐️-10-yellow)]()
