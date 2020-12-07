@@ -15,8 +15,6 @@ public class Jour6 {
 
     private static String inputs = "";
 
-    private static List<Group> planeGroup = new ArrayList<>();
-
     public static void main(String[] args) throws URISyntaxException {
         System.out.println("------ Start ------");
 
