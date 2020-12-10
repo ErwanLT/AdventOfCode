@@ -5,4 +5,6 @@
 [![Days completed](https://img.shields.io/badge/Days%20completed-1-blue)]()
 [![Stars](https://img.shields.io/badge/⭐️-2-yellow)]()
 
-* [Day 1](Day1.py)
+* Day 1
+  * [Day 1 Python classic](Day1.py)
+  * [Day 1 Jupyter notebook](Day1_jupyter.ipynb) 
