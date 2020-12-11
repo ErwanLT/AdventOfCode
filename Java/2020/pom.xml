@@ -19,6 +19,7 @@
         <module>2020-jour8</module>
         <module>2020-jour9</module>
         <module>2020-jour10</module>
+        <module>2020-jour11</module>
     </modules>
 
     <build>
