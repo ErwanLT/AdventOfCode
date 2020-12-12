@@ -7,4 +7,4 @@
 * [java](Java/README.md)
 
 ## Python
-* [Python](Python)
+* [Python](Python/README.md)
