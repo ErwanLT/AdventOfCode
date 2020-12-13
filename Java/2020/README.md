@@ -17,4 +17,4 @@
 * [Day 10](2020-jour10/README.md)
 * [Day 11](2020-jour11/README.md)
 * [Day 12](2020-Jour12/README.md)
-* [Day 13](2020-Jour13/README.md)
+* [Day 13](2020-jour13/README.md)
