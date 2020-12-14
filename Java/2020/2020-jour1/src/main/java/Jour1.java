@@ -1,4 +1,4 @@
-public class Jour1B {
+public class Jour1 {
 
     private static final int[] input = new int[]{1918,
             1869,
@@ -203,6 +203,41 @@ public class Jour1B {
     };
 
     public static void main(String[] args) {
+        System.out.println("------ Start ------");
+
+        solvePart1();
+        solvePart2();
+
+        System.out.println("------ End ------");
+    }
+
+
+    private static void solvePart1() {
+        System.out.println("------ Part1 : Start ------");
+
+        int number1 = 0;
+        int number2 = 0;
+
+        for(int i = 0; i< input.length; i++){
+            for(int j = 1; j < input.length; j++){
+                if(input[i] + input[j] == 2020){
+                    number1 = input[i];
+                    number2 = input[j];
+                    break;
+                }
+            }
+        }
+
+        int result = number1 * number2;
+
+        System.out.println("result : " + result);
+
+        System.out.println("------ Part1 : End ------");
+    }
+
+
+    private static void solvePart2() {
+        System.out.println("------ Part2 : Start ------");
 
         int number1 = 0;
         int number2 = 0;
@@ -225,5 +260,6 @@ public class Jour1B {
         int result = number1 * number2 * number3;
 
         System.out.println("result : " + result);
+        System.out.println("------ Part2 : End ------");
     }
 }
