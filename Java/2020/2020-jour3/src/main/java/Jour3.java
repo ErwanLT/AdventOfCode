@@ -11,6 +11,7 @@ public class Jour3 {
     private static char[][] grid;
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         Jour3 app = new Jour3();

@@ -26,6 +26,7 @@ public class Jour4 {
             "pid", "^[0-9]{9}$");
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

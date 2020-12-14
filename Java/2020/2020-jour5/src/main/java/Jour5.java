@@ -14,6 +14,7 @@ public class Jour5 {
     private static List<String> inputs = new ArrayList<>();
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

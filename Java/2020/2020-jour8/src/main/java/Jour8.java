@@ -20,6 +20,7 @@ public class Jour8 {
     private static List<Integer> alreadyVisitedIndex = new ArrayList<>();
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

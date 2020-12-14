@@ -18,6 +18,7 @@ public class Jour9 {
     private static long invalidNumber = 0L;
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

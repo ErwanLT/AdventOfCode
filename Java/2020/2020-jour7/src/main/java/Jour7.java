@@ -21,6 +21,7 @@ public class Jour7 {
     private static Trade[] trades;
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

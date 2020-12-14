@@ -203,6 +203,7 @@ public class Jour1 {
     };
 
     public static void main(String[] args) {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         solvePart1();

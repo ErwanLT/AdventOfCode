@@ -16,6 +16,7 @@ public class Jour10 {
     private static long[] inputs;
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

@@ -14,6 +14,7 @@ public class Jour11 {
     private static char[][] inputs;
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();

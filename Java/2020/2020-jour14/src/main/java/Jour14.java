@@ -18,6 +18,7 @@ public class Jour14 {
     private static Instruction[] instructions;
 
     public static void main(String[] args) throws URISyntaxException {
+        System.setOut(new MyPrinter(System.out));
         System.out.println("------ Start ------");
 
         getFileInput();
