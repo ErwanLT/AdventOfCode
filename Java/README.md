@@ -16,5 +16,5 @@ One module for a year.
 
 * [2020](2020/README.md) Current
 
-[![Days completed](https://img.shields.io/badge/Days%20completed-13-blue)](2020)
-[![Stars](https://img.shields.io/badge/⭐️-26-yellow)]()
+[![Days completed](https://img.shields.io/badge/Days%20completed-14-blue)](2020)
+[![Stars](https://img.shields.io/badge/⭐️-28-yellow)]()
