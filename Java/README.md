@@ -14,7 +14,7 @@ One module for a year.
 [![Days completed](https://img.shields.io/badge/Days%20completed-11-blue)](../2019)
 [![Stars](https://img.shields.io/badge/⭐️-19-yellow)]()
 
-* [2020](2020/README.md) Current
+* [2020](2020/README.md)
 
-[![Days completed](https://img.shields.io/badge/Days%20completed-14-blue)](2020)
-[![Stars](https://img.shields.io/badge/⭐️-28-yellow)]()
+[![Days completed](https://img.shields.io/badge/Days%20completed-15-blue)](2020)
+[![Stars](https://img.shields.io/badge/⭐️-30-yellow)]()
