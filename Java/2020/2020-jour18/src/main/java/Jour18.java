@@ -75,7 +75,7 @@ public class Jour18 {
         return inputLines.stream().mapToLong(i -> resolveExpression(new StringBuilder(i), simpleMath)).sum();
     }
 
-    private static Pair<Long, Integer> solve(StringBuilder s, boolean part1){
+    private static Pair<Long, Integer> solve(StringBuilder s, boolean simpleMath){
         long leftHand;
         int i = s.length()-2;
         if(s.charAt(s.length()-1) == ')'){
@@ -84,7 +84,7 @@ public class Jour18 {
                 else if(s.charAt(i) == ')') nBrackets++;
             }
             i++;
-            leftHand = resolveExpression(new StringBuilder(s.substring(i+1, s.length()-1)), part1);
+            leftHand = resolveExpression(new StringBuilder(s.substring(i+1, s.length()-1)), simpleMath);
         } else {
             leftHand = Long.parseLong(s.substring(s.length()-1, s.length()));
             i = s.length()-1;
