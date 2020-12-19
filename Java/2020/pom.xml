@@ -28,6 +28,7 @@
         <module>2020-jour17</module>
         <module>printer</module>
         <module>2020-jour18</module>
+        <module>2020-jour19</module>
     </modules>
 
     <dependencies>
