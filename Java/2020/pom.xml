@@ -30,6 +30,7 @@
         <module>2020-jour18</module>
         <module>2020-jour19</module>
         <module>2020-jour20</module>
+        <module>2020-jour21</module>
     </modules>
 
     <dependencies>
