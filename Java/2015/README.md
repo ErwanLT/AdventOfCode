@@ -6,3 +6,4 @@
 [![Stars](https://img.shields.io/badge/⭐️-2-yellow)]()
 
 * [Day 1](2015-jour1/README.md)
+* [Day 2](2015-jour2/README.md)

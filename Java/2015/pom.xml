@@ -24,7 +24,16 @@
 
     <modules>
         <module>2015-jour1</module>
+        <module>2015-jour2</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
