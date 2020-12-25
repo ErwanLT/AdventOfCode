@@ -34,6 +34,7 @@
         <module>2020-jour22</module>
         <module>2020-jour23</module>
         <module>2020-jour24</module>
+        <module>2020-jour25</module>
     </modules>
 
     <dependencies>

@@ -2,8 +2,10 @@
 
 [![About](https://img.shields.io/badge/Advent%20of%20Code-2020-brightgreen)](https://adventofcode.com/2020/about)
 [![Language](https://img.shields.io/badge/Language-Java-orange)](https://www.java.com/)
-[![Days completed](https://img.shields.io/badge/Days%20completed-24-blue)]()
-[![Stars](https://img.shields.io/badge/⭐️-48-yellow)]()
+[![Days completed](https://img.shields.io/badge/Days%20completed-25-blue)]()
+[![Stars](https://img.shields.io/badge/⭐️-50-yellow)]()
+
+[![](img/Aoc2020.png)](https://adventofcode.com/2020)
 
 * [Day 1](2020-jour1/README.md)
 * [Day 2](2020-jour2/README.md)
@@ -29,3 +31,4 @@
 * [Day 22](2020-jour22/README.md)
 * [Day 23](2020-jour23/README.md)
 * [Day 24](2020-jour24/README.md)
+* [Day 25](2020-jour25/README.md)
