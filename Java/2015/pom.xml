@@ -29,6 +29,7 @@
         <module>2015-jour4</module>
         <module>2015-jour5</module>
         <module>2015-jour6</module>
+        <module>2015-jour7</module>
     </modules>
 
     <dependencies>
