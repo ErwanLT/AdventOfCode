@@ -41,6 +41,7 @@
         <dependency>
             <groupId>com.github.ErwanLT</groupId>
             <artifactId>PrettyPrinter</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
