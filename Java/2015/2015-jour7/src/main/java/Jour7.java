@@ -1,3 +1,5 @@
+import com.eletutour.printer.PrettyPrinter;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -16,6 +18,8 @@ public class Jour7 {
 
     private static List<String> input;
 
+    private static PrettyPrinter printer;
+
     static Function<String, Integer> notOperation = s -> (~getValue(s));
 
     static BiFunction<String, String, Integer> andOperation = (arg1, arg2) -> (getValue(arg1) & getValue(arg2));
@@ -33,7 +37,8 @@ public class Jour7 {
     private static int part1Solution = 0;
 
     public static void main(String[] args) throws URISyntaxException {
-        System.out.println("------ Start ------");
+        printer = new PrettyPrinter();
+        printer.printInfo("------ Start ------");
 
         getFileInput();
 
@@ -43,16 +48,16 @@ public class Jour7 {
         initCircuit();
         solvePart2();
 
-        System.out.println("------ End ------");
+        printer.printInfo("------ End ------");
     }
 
     private static void getFileInput() throws URISyntaxException {
-        System.out.println("------ Getting input : Start ------");
+        printer.printInfo("------ Getting input : Start ------");
         Jour7 app = new Jour7();
         String fileName = "input";
         File file = app.getFileFromResource(fileName);
         getFileLine(file);
-        System.out.println("------ Getting input : End ------");
+        printer.printInfo("------ Getting input : End ------");
     }
 
     private static void getFileLine(File file) {
@@ -134,22 +139,22 @@ public class Jour7 {
 
 
     private static void solvePart1() {
-        System.out.println("------ Part1 : Start ------");
+        printer.printInfo("------ Part1 : Start ------");
 
         part1Solution = getValue("a");
-        System.out.println("The signal ultimately provided to wire a is : " + part1Solution);
+        printer.printSuccess("The signal ultimately provided to wire a is : " + part1Solution);
 
-        System.out.println("------ Part1 : End ------");
+        printer.printInfo("------ Part1 : End ------");
     }
 
 
     private static void solvePart2() {
-        System.out.println("------ Part2 : Start ------");
+        printer.printInfo("------ Part2 : Start ------");
 
         circuit.put("b", String.valueOf(part1Solution));
         int part2Solution = getValue("a");
-        System.out.println("The new signal ultimately provided to wire a is : " + part2Solution);
+        printer.printSuccess("The new signal ultimately provided to wire a is : " + part2Solution);
 
-        System.out.println("------ Part2 : End ------");
+        printer.printInfo("------ Part2 : End ------");
     }
 }
