@@ -6,8 +6,8 @@ One module for a year / one module per day inside year.
 
 * [2015](2015/README.md)
 
-[![Days completed](https://img.shields.io/badge/Days%20completed-4-blue)](2015)
-[![Stars](https://img.shields.io/badge/⭐️-8-yellow)]()
+[![Days completed](https://img.shields.io/badge/Days%20completed-5-blue)](2015)
+[![Stars](https://img.shields.io/badge/⭐️-10-yellow)]()
 
 * [2018](2018/README.md)
 
